@@ -6,7 +6,7 @@
 ## makeCacheMatrix allocates some memory space to construct a special matrix which stores and cache
 ## information on both the initial matrix 'x' and its available inverse 'inv', which by default is set to NULL
 ## meaning no computation has yet been made. makeCachematrix returns a list of methods and their current values,
-## where the setters are defined by lexical scoping so their redefinition affect the parent frame
+## where the setters are defined by lexical scoping so their redefinitions affect the parent frame
 
 makeCacheMatrix <- function(x = matrix()) {
    inv <- NULL
@@ -31,7 +31,7 @@ makeCacheMatrix <- function(x = matrix()) {
 
 
 ## When called a first time cacheSolve simply computes the inverse of 'x' with the solve() function.
-## If called again, cacheSolve detects it has been called already and simply return the value of the inverse
+## If called again, cacheSolve detects it has been called already and simply returns the value of the inverse
 ## of 'x' it had kept in cache memomry.
 
 cacheSolve <- function(x, ...) {
